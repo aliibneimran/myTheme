@@ -14,7 +14,8 @@ get_header()?>
     <?php get_template_part('content/portfolio')?>
     <!-- End Portfolio Section -->
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
 
   <!-- ======= Footer ======= -->
 <?php get_footer()?>
