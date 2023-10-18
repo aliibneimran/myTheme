@@ -97,6 +97,17 @@ function create_custom_post_type() {
        'supports' => array( 'title', 'editor', 'custom-fields','thumbnail','page-attributes' )
        )
     );
+    register_post_type( 'Portfolio',
+    array(
+       'labels' => array(
+           'name' => __( 'Portfolio' ),
+           'singular_name' => __( 'Portfolio' )
+       ),
+       'public' => true,
+       'has_archive' => true,
+       'supports' => array( 'title', 'editor', 'custom-fields','thumbnail','page-attributes' )
+       )
+    );
     }
     add_action( 'init', 'create_custom_post_type' );
 
