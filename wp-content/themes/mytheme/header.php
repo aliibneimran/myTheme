@@ -12,7 +12,7 @@
     <?php wp_head() ?>
 </head>
 
-<body>
+<body <?php body_class()?>>
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">

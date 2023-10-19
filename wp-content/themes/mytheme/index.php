@@ -1,295 +1,251 @@
-<?php get_header()?>
-    <!-- End Header -->
+<?php get_header() ?>
+<!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<main id="main">
 
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
 
-            <div class="carousel-inner" role="listbox">
-                <?php 
-					$query = new WP_Query(
-						array(
-							"post_type" => "Sliders",'post_per_page'=>5,'orderby'=>'menu_order','order'=>'ASC'
-						)
-						);
-						while($query->have_posts($post)):
-							$query->the_post(); 
-                            $btn_text = get_post_meta( $post->ID, 'btn_text', true );
-                            $btn_link = get_post_meta( $post->ID, 'btn_link', true );
-						
-				?>
-					<div class="carousel-item active" style="background-image: url(<?php the_post_thumbnail_url('large')?>);">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown"><?php the_title()?></h2>
-                            <p class="animate__animated animate__fadeInUp"><?php the_content()?></p>
-                            <a href="<?php echo $btn_link?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><?php echo $btn_text?></a>
-                        </div>
-                    </div>
-                </div>
-				<?php endwhile?>
-
-
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Blog</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Blog</li>
+                </ol>
             </div>
-
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
-
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
 
         </div>
-    </section><!-- End Hero -->
+    </section>
+    <!-- End Breadcrumbs -->
 
-    <main id="main">
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
 
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <h2>Eum ipsam laborum deleniti velitena</h2>
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+            <div class="row">
+
+                <div class="col-lg-8 entries">
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
+                                Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                            </p>
+                            <div class="read-more">
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="blog-single.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
+                                Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.
+                            </p>
+                            <div class="read-more">
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="blog-single.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
+                                Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.
+                            </p>
+                            <div class="read-more">
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="blog-single.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.</a>
+                        </h2>
+
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-content">
+                            <p>
+                                Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
+                                Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.
+                            </p>
+                            <div class="read-more">
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+                    <div class="blog-pagination">
+                        <ul class="justify-content-center">
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
                         </ul>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
-                        </p>
                     </div>
+
                 </div>
+                <!-- End blog entries list -->
+
+                <div class="col-lg-4">
+
+                    <div class="sidebar">
+
+                        <h3 class="sidebar-title">Search</h3>
+                        <div class="sidebar-item search-form">
+                            <form action="">
+                                <input type="text">
+                                <button type="submit"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div><!-- End sidebar search formn-->
+
+                        <h3 class="sidebar-title">Categories</h3>
+                        <div class="sidebar-item categories">
+                            <ul>
+                                <li><a href="#">General <span>(25)</span></a></li>
+                                <li><a href="#">Lifestyle <span>(12)</span></a></li>
+                                <li><a href="#">Travel <span>(5)</span></a></li>
+                                <li><a href="#">Design <span>(22)</span></a></li>
+                                <li><a href="#">Creative <span>(8)</span></a></li>
+                                <li><a href="#">Educaion <span>(14)</span></a></li>
+                            </ul>
+                        </div><!-- End sidebar categories-->
+
+                        <h3 class="sidebar-title">Recent Posts</h3>
+                        <div class="sidebar-item recent-posts">
+                            <div class="post-item clearfix">
+                                <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                                <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
+                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                            </div>
+
+                            <div class="post-item clearfix">
+                                <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                                <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
+                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                            </div>
+
+                            <div class="post-item clearfix">
+                                <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                                <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                            </div>
+
+                            <div class="post-item clearfix">
+                                <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                                <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
+                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                            </div>
+
+                            <div class="post-item clearfix">
+                                <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                                <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                            </div>
+
+                        </div><!-- End sidebar recent posts-->
+
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidebar-item tags">
+                            <ul>
+                                <li><a href="#">App</a></li>
+                                <li><a href="#">IT</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Mac</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Office</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Studio</a></li>
+                                <li><a href="#">Smart</a></li>
+                                <li><a href="#">Tips</a></li>
+                                <li><a href="#">Marketing</a></li>
+                            </ul>
+                        </div><!-- End sidebar tags-->
+
+                    </div><!-- End sidebar -->
+
+                </div>
+                <!-- End blog sidebar -->
 
             </div>
-        </section>
-        <?php get_template_part('content/about') ?>
-        <!-- End About Section -->
 
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
+        </div>
+    </section>
+    <!-- End Blog Section -->
 
-                <div class="row">
+</main>
+<!-- End #main -->
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Clients Section -->
-
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="row">
-                    <?php 
-					$query = new WP_Query(
-						array(
-							"post_type" => "Service",'post_per_page'=>6,'orderby'=>'menu_order','order'=>'ASC'
-						)
-						);
-						while($query->have_posts()):
-							$query->the_post(); 
-                            $btn_text = get_post_meta( $post->ID, 'btn_text', true );
-                            $btn_link = get_post_meta( $post->ID, 'btn_link', true );
-						
-				    ?>
-					<div class="col-md-6">
-                        <div class="icon-box">
-                            <i class="bi bi-briefcase"></i>
-                            <h4><a href="<?php $btn_link?>"><?php the_title()?></a></h4>
-                            <p><?php the_content()?></p>
-                        </div>
-                    </div>
-                    <?php endwhile?>
-                </div>
-            </div>
-        </section><!-- End Services Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section -->
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-   <?php get_footer()?>
+<!-- ======= Footer ======= -->
+<?php get_footer() ?>
