@@ -1,6 +1,6 @@
 <?php 
 
-function aii_theme_files(){
+function mytheme_theme_files(){
     wp_enqueue_style( 'animate', get_template_directory_uri().'/assets/vendor/animate.css/animate.min.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/vendor/bootstrap/css/bootstrap.min.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'bootstrap-icons', get_template_directory_uri().'/assets/vendor/boxicons/css/boxicons.min.css', array(), '1.0', 'all' );
@@ -9,7 +9,7 @@ function aii_theme_files(){
     wp_enqueue_style( 'swiper', get_template_directory_uri().'/assets/vendor/swiper/swiper-bundle.min.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'css', get_template_directory_uri().'/assets/css/style.css', array(), '1.0', 'all' );
 
-    wp_enqueue_style( 'aii_style', get_stylesheet_uri() );
+    wp_enqueue_style( 'mytheme_style', get_stylesheet_uri() );
 
 
     wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array('jquery'), '1.0', true );
@@ -19,14 +19,14 @@ function aii_theme_files(){
     wp_enqueue_script( 'waypoints', get_template_directory_uri().'/assets/vendor/waypoints/noframework.waypoints.js', array('jquery'), '1.0', true );
     wp_enqueue_script( 'php-email-form', get_template_directory_uri().'/assets/vendor/php-email-form/validate.js', array('jquery'), '1.0', true );
 
-    wp_enqueue_script( 'aii_js', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'mytheme_js', get_template_directory_uri().'/assets/js/main.js', array('jquery'), '1.0', true );
 }
-add_action('wp_enqueue_scripts', 'aii_theme_files');
+add_action('wp_enqueue_scripts', 'mytheme_theme_files');
 
 
-function aii_theme_supports(){
+function mytheme_theme_supports(){
     //for loading theme textdomain
-    load_theme_textdomain( 'aii-mytheme', get_template_directory().'/languages' );
+    load_theme_textdomain( 'mytheme', get_template_directory().'/languages' );
 
     //for generate automated feed links on head
     add_theme_support( 'automatic-feed-links');
@@ -60,7 +60,7 @@ function aii_theme_supports(){
     //     'flex-height' => true,
     // ));
 }
-add_action( 'after_setup_theme', 'aii_theme_supports' );
+add_action( 'after_setup_theme', 'mytheme_theme_supports' );
 
 //for custom post
 function create_custom_post_type() {
@@ -115,6 +115,40 @@ function create_custom_post_type() {
     //for widgets
     function mytheme_register_widgets(){
         register_sidebar(array(
+            "name" => __("Sidebar-1","wpimran"),
+            "id" => "sidebar-1",
+            "description" => __("A widget area location to the right sidebar","wpimran"),
+            "before_widget" => '<div class="sidebar-item search-form">',
+            "after_widget" => '</div>',
+            
+        ));
+        register_sidebar(array(
+            "name" => __("Sidebar-2","wpimran"),
+            "id" => "sidebar-2",
+            "description" => __("A widget area location to the right sidebar","wpimran"),
+            "before_widget" => '<div class="sidebar-item categories">',
+            "after_widget" => '</div>',
+            "before_title" => '<ul>',
+            "after_title" => '</ul">',
+        ));
+        register_sidebar(array(
+            "name" => __("Sidebar-3","wpimran"),
+            "id" => "sidebar-3",
+            "description" => __("A widget area location to the right sidebar","wpimran"),
+            "before_widget" => '<div class="sidebar-item recent-posts"> ',
+            "after_widget" => '</div>',
+           
+        ));
+        register_sidebar(array(
+            "name" => __("Sidebar-4","wpimran"),
+            "id" => "sidebar-4",
+            "description" => __("A widget area location to the right sidebar","wpimran"),
+            "before_widget" => '<div class="sidebar-item tags">',
+            "after_widget" => '</div>',
+            "before_title" => '<ul>',
+            "after_title" => '</ul">',
+        ));
+        register_sidebar(array(
             "name" => __("Footer 1 widgets","mytheme"),
             "id" => "footer-1-widget",
             "description" => __("A widget area location to the left side in footer","mytheme"),
@@ -123,6 +157,7 @@ function create_custom_post_type() {
             "before_title" => '<h3>',
             "after_title" => '</h3">',
         ));
+        
         register_sidebar(array(
             "name" => __("Footer 2 widgets","mytheme"),
             "id" => "footer-2-widget",

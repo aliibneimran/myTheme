@@ -18,7 +18,7 @@
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Sailor</a></h1>
+            <h1 class="logo me-auto"><a href="<?php home_url()?>">Sailor</a></h1>
 
             <nav id="navbar" class="navbar">
 
@@ -31,7 +31,7 @@
                 ?>
                 <!-- <li><a href="index.html" class="getstarted">Get Started</a></li> -->
                 <!-- <i class="bi bi-list mobile-nav-toggle"></i> -->
-            </nav><!-- .navbar -->
+            </nav>
 
         </div>
     </header>
